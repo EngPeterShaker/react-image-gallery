@@ -1,0 +1,153 @@
+// .flex-grid {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	flex-direction: row;
+// 	width: 100vw;
+// 	.col {
+// 		flex: 1;
+// 	}
+// }
+
+.flex-grid-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+	display: flex;
+	// justify-content: space-between;
+	align-items: flex-end;
+
+	.col {
+		// width: 24%;
+		// padding: 1em;
+		// padding: 20px;
+		cursor: pointer;
+		flex: 25%;
+		max-width: 25%;
+		padding: 0 10px;
+		margin: 0 0 20px 0;
+		img {
+			width: 100%;
+			margin-top: 8px;
+			vertical-align: middle;
+		}
+	}
+}
+
+// @media (max-width: 400px) {
+// 	// .flex-grid,
+// 	.flex-grid-container {
+// 		display: block;
+// 		.col {
+// 			width: 100%;
+// 			margin: 0 0 10px 0;
+// 		}
+// 	}
+// }
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 900px) {
+	.flex-grid-container {
+		// display: block;
+		.col {
+			flex: 50%;
+			max-width: 50%;
+		}
+	}
+}
+
+/* Responsive layout - makes the two cols stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+	.flex-grid-container {
+		// display: block;
+		.col {
+			flex: 100%;
+			max-width: 100%;
+		}
+	}
+}
+// @media (max-width: 900px) and (min-width: 401px) {
+// 	// .flex-grid,
+// 	.flex-grid-container {
+// 		display: block;
+// 		.col {
+// 			width: 48%;
+// 			margin: 0 0 10px 0;
+// 		}
+// 	}
+// }
+
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 20px;
+}
+// .flex-grid {
+// 	margin: 0 0 20px 0;
+// }
+// .col {
+// 	// background: salmon;
+// }
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	// transition: 0.3s;
+	// width: 40%;
+	border-radius: 5px;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	&:hover {
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	}
+	img {
+		border-radius: 5px 5px 0 0;
+	}
+
+	&__content {
+		padding: 2px 16px;
+	}
+	// display: none;
+	// transition: 1s ease-in-out;
+	&.selected {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		font-size: 50px;
+		background-color: white;
+		transform: translate(-50%, -50%);
+		// -ms-transform: translate(-50%, -50%);
+		// -webkit-transform: translate(3em, 0);
+		// -moz-transform: translate(3em, 0);
+		// -o-transform: translate(3em, 0);
+		// -ms-transform: translate(3em, 0);
+		// transform: translate(3em, 0);
+	}
+}
+
+.overlay {
+	position: fixed;
+	// display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	cursor: pointer;
+
+	// .card_overlay {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	left: 50%;
+	// 	font-size: 50px;
+	// 	color: white;
+	// 	transform: translate(-50%, -50%);
+	// 	-ms-transform: translate(-50%, -50%);
+	// }
+}
