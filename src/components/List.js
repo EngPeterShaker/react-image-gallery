@@ -33,7 +33,7 @@ const List = () => {
 		setShowOverlay(false);
 	};
 	return (
-		<div className="flex-grid-container">
+		<div className="flex-grid-container" data-cy="List">
 			{data?.length > 0 &&
 				imagesList.map((imageSrc, index) => {
 					return (
