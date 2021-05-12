@@ -4,7 +4,7 @@ describe("The application loads", () => {
 		cy.visit(hostUrl);
 	});
 
-	it("has the basic Todo list container", () => {
+	it("has the basicheader", () => {
 		cy.visit(hostUrl);
 		cy.get("h3").contains("Learn React");
 	});
