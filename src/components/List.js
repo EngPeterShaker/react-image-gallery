@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { fakeAPI_Users, landscape, placeHolderList, placeholderURL, portrait } from "../utils/constants";
+import { fakeAPI_Users, placeHolderList } from "../utils/constants";
 import getRandomInt from "../utils/getRandomInt";
-import (placeHolderList , portrait, landscape , placeholderURL, fakeAPI_Users) from "../utils/constants";
+
 import Card from "./Card";
 
 const List = () => {
