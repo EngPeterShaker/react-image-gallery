@@ -1,10 +1,8 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { fakeAPI_Users, landscape, placeHolderList, placeholderURL, portrait } from "../utils/constants";
 import getRandomInt from "../utils/getRandomInt";
+import (placeHolderList , portrait, landscape , placeholderURL, fakeAPI_Users) from "../utils/constants";
 import Card from "./Card";
-const placeholderURL = "https://via.placeholder.com/";
-const portrait = `${placeholderURL}150x200`;
-const landscape = `${placeholderURL}200x150`;
-const placeHolderList = [portrait, landscape];
 
 const List = () => {
 	const [showOverlay, setShowOverlay] = useState(false);
@@ -12,14 +10,14 @@ const List = () => {
 	const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
 	const imagesList = useMemo(
-		() => Array.from(Array(10), () => placeHolderList[getRandomInt(2)]),
+		() => Array.from(Array(12), () => placeHolderList[getRandomInt(2)]),
 		[]
 	);
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await fetch("https://jsonplaceholder.typicode.com/users");
+			const result = await fetch(fakeAPI_Users);
 			const data = await result.json();
-			setData([...data]);
+			setData([...data, ...data]);
 		};
 
 		fetchData();
@@ -51,7 +49,7 @@ const List = () => {
 					{
 						<div
 							className={`card ${
-								selectedImageIndex !== null ? "selected" : "x"
+								selectedImageIndex !== null ? "selected" : ""
 							}`}
 						>
 							<img src={imagesList[selectedImageIndex]} alt="Avatar" />

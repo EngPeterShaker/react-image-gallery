@@ -1,0 +1,47 @@
+.flex-grid-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: space-around;
+	display: flex;
+	padding: 0 10px;
+	// justify-content: space-between;
+	align-items: flex-end;
+
+	.col {
+		cursor: pointer;
+		flex: 25%;
+		max-width: calc(25% - 10px);
+		padding: 0 10px;
+		margin: 0 0 10px;
+		img {
+			width: 100%;
+			margin-top: 8px;
+			vertical-align: middle;
+		}
+	}
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 900px) {
+	.flex-grid-container {
+		// display: block;
+		.col {
+			flex: 50%;
+			max-width: calc(50% - 10px);
+		}
+	}
+}
+
+/* Responsive layout - makes the two cols stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+	.flex-grid-container {
+		// display: block;
+		.col {
+			flex: 100%;
+			max-width: 100%;
+		}
+	}
+}
